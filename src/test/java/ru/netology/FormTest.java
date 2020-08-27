@@ -9,10 +9,13 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
-
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -32,6 +35,4 @@ public class FormTest {
         $$("button").find(exactText("Забронировать")).click();
         $("[data-test-id=notification]").waitUntil(Condition.visible, 15000).shouldHave(text("Встреча успешно забронирована на " + dateMeeting));
     }
-
-
 }
